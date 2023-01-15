@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Hello, WebVR! • A-Frame</title>
+    <meta name="description" content="Hello, WebVR! • A-Frame">
+    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-physics-system@1.4.0/dist/aframe-physics-system.min.js"></script>
+    <script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
+<!--This script is new-->
+<script>
+  // component declaration
+  AFRAME.registerComponent("mylink", {
+    // define a url in the schema
+    schema: {
+      href: {}
+    },
+    init: function() {
+      // when clicked - change the location:
+      this.el.addEventListener("click", (e) => {
+        window.location = this.data.href;
+      })
+    }
+  })
+</script>
+  </head>
+  <body>
+    <a-scene background="color: #69CF0D"
+       cursor="rayOrigin: mouse"
+            fog="type: exponential; density: 0.1; color: #69CF0D;"
+            animation="property: fog.color; dur: 7000;
+                      from: #69CF0D; to: #69CF0D;
+                      loop: indefinite; dir: alternate">
+
+     <a-light type="point" color="#69CF0D" intensity="2" position="0 0 0"
+              animation="property: light.intensity;
+                         dur: 7000; from: 10; to: 10;
+                         dir: alternate; loop: true">
+
+  </a-light>
+
+
+  <!--chess-->
+    <a-plane src="https://thumbs.dreamstime.com/b/hipster-green-chess-board-vector-pattern-plastic-143090549.jpg" position="0 0 -15" rotation="40 0 0"
+            scale="30 70 50"></a-plane>
+<!--text-->
+<a-text text="font: https://cdn.aframe.io/fonts/mozillavr.fnt; value: Would you like to open the box?" color="black" position="-3 3 -5" scale="1.3 1.3 1"></a-text>
+<!--text choises-->
+
+  <a-entity
+    geometry="primitive: plane; width: 1; height: 1"
+    material="color: black"
+    text="width: 7; value: No; align: center; color: #69CF0D"
+    mylink="href:index.html;"
+    position="-5 1 -6"></a-entity>
+    <a-entity
+      geometry="primitive: plane; width: 1; height: 1"
+      material="color: black"
+      text="width: 7; value: Yes; align: center; color: #69CF0D"
+      mylink="href:index.html;"
+      position="5 1 -6"></a-entity>
+
+<!--bodies-->
+      <a-assets>
+        <a-asset-item id="treasure" src="https://cdn.glitch.global/67458bd5-8077-4e26-932a-26ac083eec53/treasure.gltf?v=1673779437333"></a-asset-item>
+      </a-assets>
+
+      <a-entity position="0 0 -7" gltf-model="#treasure"
+                scale="0.2 0.2 0.2"
+                animation="property: rotation; dur: 10000;
+                           to: 0 360 0; loop: true">
+      </a-entity>
+
+<!--cylinders-->
+<a-cylinder color="yellow" position="-12 0 -15" rotation="-10 0 0" height="30" radius="1"></a-cylinder>
+<a-cylinder color="yellow" position="12 0 -15" rotation="-10 0 0" height="30" radius="1"></a-cylinder>
+<a-cylinder color="yellow" position="-12 0 -6" rotation="-10 0 0" height="30" radius="1"></a-cylinder>
+<a-cylinder color="yellow" position="12 0 -6" rotation="-10 0 0" height="30" radius="1"></a-cylinder>
+         <a-assets>
+<!--bodies ends-->
+<a-text value="hej" font="custom-msdf.json" font-image="custom-msdf.png" negate="false" scale="2 2 1" position="-2 2 -4"></a-text>
+    </a-scene>
+  </body>
+</html>
+
+<!--aplanes-->
+<a-box color="tomato" depth="2" height="4" width="4"></a-box>
+
+
+
+  </a-scene>
+  </body>
