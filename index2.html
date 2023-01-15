@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Virtual Mud</title>
+    <meta name="description" content="Virtual mud">
+    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-physics-system@1.4.0/dist/aframe-physics-system.min.js"></script>
+    <script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
+    </head>
+
+<!--This script is new-->
+<script>
+  // component declaration
+  AFRAME.registerComponent("mylink", {
+    // define a url in the schema
+    schema: {
+      href: {}
+    },
+    init: function() {
+      // when clicked - change the location:
+      this.el.addEventListener("click", (e) => {
+        window.location = this.data.href;
+      })
+    }
+  })
+</script>
+
+  <body>
+ <a-scene background="color: #69CF0D"
+    cursor="rayOrigin: mouse"
+         fog="type: exponential; density: 0.1; color: #69CF0D;"
+         animation="property: fog.color; dur: 7000;
+                   from: #69CF0D; to: #69CF0D;
+                   loop: indefinite; dir: alternate">
+
+  <a-light type="point" color="#69CF0D" intensity="2" position="0 0 0"
+           animation="property: light.intensity;
+                      dur: 7000; from: 7; to: 7;
+                      dir: alternate; loop: true">
+
+  </a-light>
+
+<a-plane position="0 0.5 -2.8" height="2.2" width="2.2" material="opacity: 0" mylink="href: body.html;"></a-plane>
+
+<!--bodies-->
+<a-scene physics>
+
+
+  <a-plane src="https://thumbs.dreamstime.com/b/hipster-green-chess-board-vector-pattern-plastic-143090549.jpg" position="0 -2 0" rotation="-90 0 0"
+          scale="30 70 50" sound="src:https://cdn.glitch.global/f6e7f4e5-537a-4709-bddf-0cbd0142e229/Ringing%20Ambient%20Background.mp3?v=1673801748645; autoplay: true;"></a-plane>
+
+<a-entity
+    geometry="primitive: plane; width: 2.2; height: 1.6"
+    material="color: black"
+    text="width: 7; value: a-video src
+           a-link, sketch; align: center; color: #69CF0D"
+    mylink="href: video.html;"
+    position="-1 5 -6"
+  ></a-entity>
+
+<!--balls 1-->
+
+   <a-entity
+      geometry="primitive: sphere; width: 1; height: 1"
+      material="src: https://cdn.glitch.global/95425908-f74e-4e77-8266-d2499ece41d7/img_521058.png?v=1673725114279"
+      mylink="href:body.html;"
+      position="0 1 -20"
+      rotation="0 -60 0"
+      animation="property: position; to: -9 1 -6; dur: 9000; easing: easeInOutElastic; loop: false"
+      ></a-entity>
+
+
+  <a-sphere src="https://cdn.glitch.global/95425908-f74e-4e77-8266-d2499ece41d7/img_521058.png?v=1673725114279" position="-2 1 -30" rotation="0 -90 0"
+    scale="1 1 1" mylink="href:body.html;" animation="property: position; to: -2 1 -6; dur: 12000; easing: easeInOutElastic; loop: false"></a-sphere>
+    <a-sphere src="https://cdn.glitch.global/95425908-f74e-4e77-8266-d2499ece41d7/img_521058.png?v=1673725114279" position="5 1 -20" rotation="0 -90 0"
+      scale="1 1 1" mylink="href:body.html;" animation="property: position; to: 5 1 -6; dur: 12000; easing: easeInOutElastic; loop: false"></a-sphere>
+    <a-sphere src="https://cdn.glitch.global/95425908-f74e-4e77-8266-d2499ece41d7/img_521058.png?v=1673725114279" position="12 1 -40" rotation="0 -120 0"
+      scale="1 1 1" mylink="href:body.html;" animation="property: position; to: 12 1 -6; dur: 13000; easing: easeInOutElastic; loop: false"></a-sphere>
+
+<!--balls 2-->
+
+<a-sphere src="https://cdn.glitch.global/95425908-f74e-4e77-8266-d2499ece41d7/img_521058.png?v=1673725114279" position="-12 2 -12" rotation="0 -60 0"
+        scale="1 1 1" mylink="href:body.html;" ></a-sphere>
+  <a-sphere src="https://cdn.glitch.global/95425908-f74e-4e77-8266-d2499ece41d7/img_521058.png?v=1673725114279" position="-5 2 -12" rotation="0 -90 0"
+    scale="1 1 1" mylink="href:body.html;"></a-sphere>
+    <a-sphere src="https://cdn.glitch.global/95425908-f74e-4e77-8266-d2499ece41d7/img_521058.png?v=1673725114279" position="2 2 -12" rotation="0 -90 0"
+      scale="1 1 1" mylink="href:body.html;"></a-sphere>
+    <a-sphere src="https://cdn.glitch.global/95425908-f74e-4e77-8266-d2499ece41d7/img_521058.png?v=1673725114279" position="9 2 -12" rotation="0 -120 0"
+      scale="1 1 1" mylink="href:body.html;"></a-sphere>
+ iocsn
+<!--balls 2-->
+<a-sphere src="https://cdn.glitch.global/95425908-f74e-4e77-8266-d2499ece41d7/img_521058.png?v=1673725114279" position="-9 3 -16" rotation="0 -60 0"
+        scale="1 1 1"></a-sphere>
+  <a-sphere src="https://cdn.glitch.global/95425908-f74e-4e77-8266-d2499ece41d7/img_521058.png?v=1673725114279" position="-2 3 -16" rotation="0 -90 0"
+    scale="1 1 1"></a-sphere>
+    <a-sphere src="https://cdn.glitch.global/95425908-f74e-4e77-8266-d2499ece41d7/img_521058.png?v=1673725114279" position="5 3 -16" rotation="0 -90 0"
+      scale="1 1 1"></a-sphere>
+    <a-sphere src="https://cdn.glitch.global/95425908-f74e-4e77-8266-d2499ece41d7/img_521058.png?v=1673725114279" position="12 3 -16" rotation="0 -120 0"
+      scale="1 1 1"></a-sphere>
+
+  <!--balls 3-->
+  <a-sphere src="https://cdn.glitch.global/95425908-f74e-4e77-8266-d2499ece41d7/img_521058.png?v=1673725114279" position="-12 4 -20" rotation="0 -60 0"
+          scale="1 1 1"></a-sphere>
+    <a-sphere src="https://cdn.glitch.global/95425908-f74e-4e77-8266-d2499ece41d7/img_521058.png?v=1673725114279" position="-5 4 -20" rotation="0 -90 0"
+      scale="1 1 1"></a-sphere>
+      <a-sphere src="https://cdn.glitch.global/95425908-f74e-4e77-8266-d2499ece41d7/img_521058.png?v=1673725114279" position="2 4 -20" rotation="0 -90 0"
+        scale="1 1 1"></a-sphere>
+      <a-sphere src="https://cdn.glitch.global/95425908-f74e-4e77-8266-d2499ece41d7/img_521058.png?v=1673725114279" position="9 4 -20" rotation="0 -120 0"
+        scale="1 1 1"></a-sphere>
+
+    <!-- balls 4-->
+    <a-sphere src="https://cdn.glitch.global/95425908-f74e-4e77-8266-d2499ece41d7/img_521058.png?v=1673725114279" position="-9 5 -25" rotation="0 -60 0"
+            scale="1 1 1"></a-sphere>
+      <a-sphere src="https://cdn.glitch.global/95425908-f74e-4e77-8266-d2499ece41d7/img_521058.png?v=1673725114279" position="-2 5 -25" rotation="0 -90 0"
+        scale="1 1 1"></a-sphere>
+        <a-sphere src="https://cdn.glitch.global/95425908-f74e-4e77-8266-d2499ece41d7/img_521058.png?v=1673725114279" position="5 5 -25" rotation="0 -90 0"
+          scale="1 1 1"></a-sphere>
+        <a-sphere src="https://cdn.glitch.global/95425908-f74e-4e77-8266-d2499ece41d7/img_521058.png?v=1673725114279" position="12 5 -25" rotation="0 -120 0"
+          scale="1 1 1"></a-sphere>
+
+    <!--balls 5-->
+          <a-sphere src="https://cdn.glitch.global/95425908-f74e-4e77-8266-d2499ece41d7/img_521058.png?v=1673725114279" position="-12 6 -30" rotation="0 -60 0"
+                  scale="1 1 1"></a-sphere>
+            <a-sphere src="https://cdn.glitch.global/95425908-f74e-4e77-8266-d2499ece41d7/img_521058.png?v=1673725114279" position="-5 6 -30" rotation="0 -90 0"
+              scale="1 1 1"></a-sphere>
+              <a-sphere src="https://cdn.glitch.global/95425908-f74e-4e77-8266-d2499ece41d7/img_521058.png?v=1673725114279" position="2 6 -30" rotation="0 -90 0"
+                scale="1 1 1"></a-sphere>
+              <a-sphere src="https://cdn.glitch.global/95425908-f74e-4e77-8266-d2499ece41d7/img_521058.png?v=1673725114279" position="9 6 -30" rotation="0 -120 0"
+                scale="1 1 1"></a-sphere>
+
+
+                <!-- BACK balls 1-->
+                <a-sphere src="https://cdn.glitch.global/95425908-f74e-4e77-8266-d2499ece41d7/img_521058.png?v=1673725114279" position="-9 1,5 6" rotation="0 60 0"
+                        scale="1 1 1" mylink=href:body.html;></a-sphere>
+                  <a-sphere src="https://cdn.glitch.global/95425908-f74e-4e77-8266-d2499ece41d7/img_521058.png?v=1673725114279" position="-2 1,5 6" rotation="0 90 0"
+                    scale="1 1 1" mylink=href:body.html;></a-sphere>
+                    <a-sphere src="https://cdn.glitch.global/95425908-f74e-4e77-8266-d2499ece41d7/img_521058.png?v=1673725114279" position="5 1,5 6" rotation="0 90 0"
+                      scale="1 1 1" mylink=href:body.html;></a-sphere>
+                    <a-sphere src="https://cdn.glitch.global/95425908-f74e-4e77-8266-d2499ece41d7/img_521058.png?v=1673725114279" position="12 1,5 6" rotation="0 120 0"
+                      scale="1 1 1" mylink=href:body.html;></a-sphere>
+
+                <!-- BACK balls 2-->
+
+                <a-sphere src="https://cdn.glitch.global/95425908-f74e-4e77-8266-d2499ece41d7/img_521058.png?v=1673725114279" position="-12 2 12" rotation="0 60 0"
+                        scale="1 1 1"></a-sphere>
+                  <a-sphere src="https://cdn.glitch.global/95425908-f74e-4e77-8266-d2499ece41d7/img_521058.png?v=1673725114279" position="-5 2 12" rotation="0 90 0"
+                    scale="1 1 1"></a-sphere>
+                    <a-sphere src="https://cdn.glitch.global/95425908-f74e-4e77-8266-d2499ece41d7/img_521058.png?v=1673725114279" position="2 2 12" rotation="0 90 0"
+                      scale="1 1 1"></a-sphere>
+                    <a-sphere src="https://cdn.glitch.global/95425908-f74e-4e77-8266-d2499ece41d7/img_521058.png?v=1673725114279" position="9 2 12" rotation="0 120 0"
+                      scale="1 1 1"></a-sphere>
+
+                <!-- BACKballs 2-->
+                <a-sphere src="https://cdn.glitch.global/95425908-f74e-4e77-8266-d2499ece41d7/img_521058.png?v=1673725114279" position="-9 3 16" rotation="0 60 0"
+                        scale="1 1 1"></a-sphere>
+                  <a-sphere src="https://cdn.glitch.global/95425908-f74e-4e77-8266-d2499ece41d7/img_521058.png?v=1673725114279" position="-2 3 16" rotation="0 90 0"
+                    scale="1 1 1"></a-sphere>
+                    <a-sphere src="https://cdn.glitch.global/95425908-f74e-4e77-8266-d2499ece41d7/img_521058.png?v=1673725114279" position="5 3 16" rotation="0 90 0"
+                      scale="1 1 1"></a-sphere>
+                    <a-sphere src="https://cdn.glitch.global/95425908-f74e-4e77-8266-d2499ece41d7/img_521058.png?v=1673725114279" position="12 3 16" rotation="0 120 0"
+                      scale="1 1 1"></a-sphere>
+
+                  <!-- BACK balls 3-->
+                  <a-sphere src="https://cdn.glitch.global/95425908-f74e-4e77-8266-d2499ece41d7/img_521058.png?v=1673725114279" position="-12 4 20" rotation="0 60 0"
+                          scale="1 1 1"></a-sphere>
+                    <a-sphere src="https://cdn.glitch.global/95425908-f74e-4e77-8266-d2499ece41d7/img_521058.png?v=1673725114279" position="-5 4 20" rotation="0 90 0"
+                      scale="1 1 1"></a-sphere>
+                      <a-sphere src="https://cdn.glitch.global/95425908-f74e-4e77-8266-d2499ece41d7/img_521058.png?v=1673725114279" position="2 4 20" rotation="0 90 0"
+                        scale="1 1 1"></a-sphere>
+                      <a-sphere src="https://cdn.glitch.global/95425908-f74e-4e77-8266-d2499ece41d7/img_521058.png?v=1673725114279" position="9 4 20" rotation="0 120 0"
+                        scale="1 1 1"></a-sphere>
+
+                    <!-- BACK balls 4-->
+                    <a-sphere src="https://cdn.glitch.global/95425908-f74e-4e77-8266-d2499ece41d7/img_521058.png?v=1673725114279" position="-9 5 25" rotation="0 60 0"
+                            scale="1 1 1"></a-sphere>
+                      <a-sphere src="https://cdn.glitch.global/95425908-f74e-4e77-8266-d2499ece41d7/img_521058.png?v=1673725114279" position="-2 5 25" rotation="0 90 0"
+                        scale="1 1 1"></a-sphere>
+                        <a-sphere src="https://cdn.glitch.global/95425908-f74e-4e77-8266-d2499ece41d7/img_521058.png?v=1673725114279" position="5 5 25" rotation="0 90 0"
+                          scale="1 1 1"></a-sphere>
+                        <a-sphere src="https://cdn.glitch.global/95425908-f74e-4e77-8266-d2499ece41d7/img_521058.png?v=1673725114279" position="12 5 25" rotation="0 120 0"
+                          scale="1 1 1"></a-sphere>
+
+                    <!-- BACK balls 5-->
+                          <a-sphere src="https://cdn.glitch.global/95425908-f74e-4e77-8266-d2499ece41d7/img_521058.png?v=1673725114279" position="-12 6 30" rotation="0 60 0"
+                                  scale="1 1 1"></a-sphere>
+                            <a-sphere src="https://cdn.glitch.global/95425908-f74e-4e77-8266-d2499ece41d7/img_521058.png?v=1673725114279" position="-5 6 30" rotation="0 90 0"
+                              scale="1 1 1"></a-sphere>
+                              <a-sphere src="https://cdn.glitch.global/95425908-f74e-4e77-8266-d2499ece41d7/img_521058.png?v=1673725114279" position="2 6 30" rotation="0 90 0"
+                                scale="1 1 1"></a-sphere>
+                              <a-sphere src="https://cdn.glitch.global/95425908-f74e-4e77-8266-d2499ece41d7/img_521058.png?v=1673725114279" position="9 6 30" rotation="0 120 0"
+                                scale="1 1 1"></a-sphere>
+
+<a-entity text="text: Hello World; font: ../fonts/DejaVu-sdf.fnt; fontImage: ../fonts/DejaVu-sdf.png" position="0 2 -2" ></a-entity>
+
+  <a-sky color="#69CF0D"></a-sky>
+
+
+</a-scene>
+<!--bodies ends-->
+<!--aplanes-->
