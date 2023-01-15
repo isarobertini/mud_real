@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Virtual Mud</title>
+    <meta name="description" content="Hello, WebVR! • A-Frame">
+    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-physics-system@1.4.0/dist/aframe-physics-system.min.js"></script>
+    <script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
+    </head>
+
+<!--This script is new-->
+<script>
+  // component declaration
+  AFRAME.registerComponent("mylink", {
+    // define a url in the schema
+    schema: {
+      href: {}
+    },
+    init: function() {
+      // when clicked - change the location:
+      this.el.addEventListener("click", (e) => {
+        window.location = this.data.href;
+      })
+    }
+  })
+</script>
+
+  <body>
+ <a-scene background="color: #69CF0D"
+    cursor="rayOrigin: mouse"
+         fog="type: exponential; density: 0.1; color: #69CF0D;"
+         animation="property: fog.color; dur: 7000;
+                   from: #69CF0D; to: #69CF0D;
+                   loop: indefinite; dir: alternate">
+
+  <a-light type="point" color="#69CF0D" intensity="2" position="0 0 0"
+           animation="property: light.intensity;
+                      dur: 7000; from: 7; to: 7;
+                      dir: alternate; loop: true">
+
+  </a-light>
+
+
+<!--bodies-->
+<a-scene physics>
+
+<a-assets>
+    <video id="penguin-sledding" autoplay loop="true" src="https://cdn.glitch.global/f6e7f4e5-537a-4709-bddf-0cbd0142e229/e31efc4d-dd90-46dd-ae5b-c2e3b44b9590.MP4?v=1673810573751"></video>
+  </a-assets>
+
+   <a-video src="#penguin-sledding" width="10" height="20" position="0 0 -8"></a-video>
+
+  <a-plane src="https://thumbs.dreamstime.com/b/hipster-green-chess-board-vector-pattern-plastic-143090549.jpg" position="0 -2 0" rotation="-90 0 0"
+          scale="30 70 50"></a-plane>
+
+
+
+
+  <a-sky color="#69CF0D"></a-sky>
+
+
+</a-scene>
+<!--bodies ends-->
+<!--aplanes-->
