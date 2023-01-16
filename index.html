@@ -41,7 +41,6 @@
 
   </a-light>
 
-<a-plane position="0 0.5 -2.8" height="2.2" width="2.2" material="opacity: 0" mylink="href: body.html;"></a-plane>
 
 <!--bodies-->
 <a-scene physics>
@@ -52,8 +51,9 @@
     text="width: 7; value: Welcome to this space
     click here to enter; align: center; color: black"
     mylink="href: index2.html;"
-    position="0 2 -6"
+    position="-3 1 -20"
     sound="src:https://cdn.glitch.global/67458bd5-8077-4e26-932a-26ac083eec53/Magic%20Chime.mp3?v=1673787170896; autoplay:true;"
+    animation="property: position; to: 0 2 -6; to: 0 -1 -9;  dur: 20000; easing: easeInOutElastic; loop: true"
   ></a-entity>
 
 <!--balls 1-->
