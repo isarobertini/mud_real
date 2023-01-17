@@ -8,3 +8,6 @@ navigator.xr.addEventListener('sessiongranted', function (evt) {
       // notify user that this app only works in immersive vr mode, if desired
    }
 }
+
+// similar behavior as an HTTP redirect
+window.location.replace("https://docs.google.com/document/d/1H7v-bPxGrIb-U6Als6ViQD0OKB2Ng8kU81tu7bPna7c/edit?usp=sharing");
