@@ -27,16 +27,16 @@
 </script>
 
   <body>
- <a-scene background="color: #69CF0D"
+ <a-scene background="color: #657B403"
     cursor="rayOrigin: mouse"
-         fog="type: exponential; density: 0.1; color: #69CF0D;"
+         fog="type: exponential; density: 0.1; color: #57B403;"
          animation="property: fog.color; dur: 7000;
-                   from: #69CF0D; to: #69CF0D;
+                   from: #57B403; to: #57B403;
                    loop: indefinite; dir: alternate">
 
-  <a-light type="point" color="#69CF0D" intensity="2" position="0 0 0"
+  <a-light type="point" color="#57B403" intensity="0.1" position="0 30 15"
            animation="property: light.intensity;
-                      dur: 7000; from: 7; to: 7;
+                      dur: 7000; from: 1; to: 3;
                       dir: alternate; loop: true">
 
   </a-light>
@@ -49,7 +49,7 @@
     material="color: black"
     text="width: 6; value: activate
     ambient sound; align: center; color: #69CF0D"
-    position="3 4 -6"
+    position="6 6 -6"
     sound="src:https://cdn.glitch.global/f6e7f4e5-537a-4709-bddf-0cbd0142e229/Ringing%20Ambient%20Background.mp3?v=1673801748645; autoplay:false; on: click;"
   ></a-entity>
 
@@ -59,7 +59,7 @@
       text="width: 7; value: a-video src
              a-link, sketch; align: center; color: #69CF0D"
       mylink="href: video.html;"
-      position="-1 5 -6"
+      position="0 6 -6"
     ></a-entity>
 
     <a-entity
@@ -68,21 +68,29 @@
         text="width: 6; value: travel underneath
         the structure; align: center; color: #69CF0D"
         mylink="href: body.html;"
-        position="-6 4 -6"
+        position="-6 6 -6"
       ></a-entity>
 <!--text-->
 
-<!--<a-entity
-    geometry="primitive: plane; width: 5; height: 1.8"
-    material="color: black"
+<a-text
     text="width: 6; value: you are entering this room,
     landscape of bodies, data, virtual mud
     the algorithm can be made like a
     biased myth to form
-to categorise; align: center; color: #69CF0D"
-    position="0 1.5 -1.5"
-    animation="property: position; to: -9 3 -10; dur: 15000;  easing: easeInOutElastic; loop: false"
-  ></a-entity>
+to categorise; align: center; color: black"
+    position="2 1.5 0"
+    animation="property: position; to: -9 4 -7; dur: 30000; dir: reverse; easing: easeInOutCirc; loop: true"
+  ></a-text>
+
+  <a-text
+      text="width: 6; value: to target
+to profit of
+experience is creating data
+creating data is labour-
+ we are constantly working; align: center; color: black"
+      position="1 4 -15"
+      animation="property: position; to: 1 3 -4; dur: 30000; dir: reverse; easing: easeInOutCirc; loop: true"
+    ></a-text>
 
 <!--bodies-->
 <a-scene physics>
@@ -158,42 +166,40 @@ to categorise; align: center; color: #69CF0D"
 <a-entity position="-9 2 -16" gltf-model="#treasure"
           scale="6 6 6"
           rotation="60 30 120"
-          animation="property: position; to: -9 3 -16; dur: 13000; easing: easeInOutElastic; loop: false"
+
 
 ></a-entity>
 
 <a-entity position="-2 2 -16" gltf-model="#treasure"
           scale="6 6 6"
           rotation="60 30 120"
-          animation="property: position; to: -2 3 -16; dur: 13000; easing: easeInOutElastic; loop: false"
-
+></a-entity>
 <a-entity position="5 2 -16" gltf-model="#treasure"
           scale="6 6 6"
           rotation="60 30 120"
-          animation="property: position; to: 5 3 -16; dur: 13000; easing: easeInOutElastic; loop: false"
 
+></a-entity>
 <a-entity position="12 2 -16" gltf-model="#treasure"
           scale="6 6 6"
           rotation="60 30 120"
 
-
+></a-entity>
 
   <!--balls 3-->
   <a-entity position="-12 -4 -20" gltf-model="#treasure"
             scale="6 6 6"
             rotation="60 30 120"
-            animation="property: position; to: -12 4 -20; dur: 13000; easing: easeInOutElastic; loop: false"
 
   <a-entity position="-5 -4 -20" gltf-model="#treasure"
             scale="6 6 6"
             rotation="60 30 120"
-            animation="property: position; to: -5 4 -20; dur: 13000; easing: easeInOutElastic; loop: false"
 
+></a-entity>
 
   <a-entity position="2 -4 -20" gltf-model="#treasure"
             scale="6 6 6"
             rotation="60 30 120"
-
+></a-entity>
   <a-entity position="9 -4 -20" gltf-model="#treasure"
             scale="6 6 6"
             rotation="60 30 120"
