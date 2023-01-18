@@ -34,12 +34,12 @@
   <body>
  <a-scene background="color: black"
     cursor="rayOrigin: mouse"
-         fog="type: exponential; density: 0.1; color: #69CF0D;"
+         fog="type: exponential; density: 0.1; color: darkgreen;"
          animation="property: fog.color; dur: 7000;
                    from: #69CF0D; to: #69CF0D;
                    loop: indefinite; dir: alternate">
 
-  <a-light type="point" color="#69CF0D" intensity="2" position="0 0 0"
+  <a-light type="point" color="green" intensity="1" position="0 0 0"
            animation="property: light.intensity;
                       dur: 7000; from: 7; to: 7;
                       dir: alternate; loop: true">
@@ -57,13 +57,23 @@
 </a-assets>
 
 <a-entity
-          geometry="primitive: plane; width: 5; height: 5"
+          geometry="primitive: plane; width: 1; height: 1"
           position="-4 1 -4"
           rotation="0 35 0"
           color="grey"
           mylink="href: video2.html;"
           text="width: 5; value: Video; align: center; color: #69CF0D"
       ></a-entity>
+
+      <a-entity
+                geometry="primitive: plane; width: 1; height: 1"
+                position="4 1 -4"
+                rotation="0 -35 0"
+                color="grey"
+                text="width: 5; value: Activate
+                voice over; align: center; color: #69CF0D"
+                sound="src:https://cdn.glitch.global/f6e7f4e5-537a-4709-bddf-0cbd0142e229/Bo%CC%88cklinstra%C3%9Fe.m4a?v=1674047231877; autoplay:false; on: click; loop: true;"
+            ></a-entity>
 
 <!--text-->
 <a-text
