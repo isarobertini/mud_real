@@ -2,63 +2,413 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Video</title>
-    <meta name="description" content="Video - A-Frame">
-    <script src="../../../dist/aframe-master.js"></script>
-    <script src="../../js/play-on-click.js"></script>
-    <script src="../../js/hide-on-play.js"></script>
-  </head>
+    <title>sketch_virtual_mud</title>
+    <meta name="description" content="sketch">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="viewport" content="width=device-width,initial-scale=1.5,user-scalable=no">
+	<script src="compressed.js" type="text/javascript" charset="utf-8"></script>
+
+    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-physics-system@1.4.0/dist/aframe-physics-system.min.js"></script>
+    <script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
+    </head>
+
+<!--This script is new-->
+<script>
+  // component declaration
+  AFRAME.registerComponent("mylink", {
+    // define a url in the schema
+    schema: {
+      href: {}
+    },
+    init: function() {
+      // when clicked - change the location:
+      this.el.addEventListener("click", (e) => {
+        window.location = this.data.href;
+      })
+    }
+  })
+</script>
+
   <body>
-    <a-scene>
-      <a-assets>
-        <video id="videoBunny" preload="auto"
-               src="https://cdn.glitch.global/f6e7f4e5-537a-4709-bddf-0cbd0142e229/e31efc4d-dd90-46dd-ae5b-c2e3b44b9590.MP4?v=1673810573751"
-               width="160" height="90" autoplay loop="true"
-               crossOrigin="anonymous" muted></video>
-        <video id="videoFireworks" preload="auto"
-               src="https://cdn.glitch.global/f6e7f4e5-537a-4709-bddf-0cbd0142e229/e31efc4d-dd90-46dd-ae5b-c2e3b44b9590.MP4?v=1673810573751"
-               width="160" height="90" autoplay loop="true"
-               crossOrigin="anonymous" muted></video>
-      </a-assets>
+ <a-scene background="color: black"
+    cursor="rayOrigin: mouse"
+         fog="type: exponential; density: 0.1; color: #69CF0D;"
+         animation="property: fog.color; dur: 7000;
+                   from: #69CF0D; to: #69CF0D;
+                   loop: indefinite; dir: alternate">
 
-      <!--
-      SOURCE
-      Title:  Big Buck Bunny
-      Author: Blender Institute
-      URL:    https://peach.blender.org/
-      -->
-      <a-entity material="shader: flat; src: #videoBunny"
-                geometry="primitive: plane; width: 160; height: 90;"
-                position="0 60 -250"
-                rotation="0 35 0"
-                play-on-click
-                visible="false">
-      </a-entity>
+  <a-light type="point" color="#69CF0D" intensity="2" position="0 0 0"
+           animation="property: light.intensity;
+                      dur: 7000; from: 7; to: 7;
+                      dir: alternate; loop: true">
 
-      <!--
-      SOURCE
-      Title:  Fireworks
-      Author: Motion Digital
-      URL:    https://www.videvo.net/profile/motiondigital/
-      -->
-      <a-entity material="shader: flat; src: #videoFireworks"
-                geometry="primitive: plane; width: 160; height: 90"
-                position="0 -60 -200"
-                rotation="0 -35 0"
-                play-on-click
-                visible="false">
-      </a-entity>
-      <a-camera>
-        <a-entity
-          position="0 0 -1.5"
-          text="align: center;
-                width: 6;
-                wrapCount: 100;
-                color: black;
-                value: Click or tap to start video"
-          hide-on-play="#videoFireworks">
-        </a-entity>
-      </a-camera>
-    </a-scene>
-  </body>
-</html>
+  </a-light>
+
+
+<!--bodies-->
+<a-scene physics>
+  <a-plane src="https://thumbs.dreamstime.com/b/hipster-green-chess-board-vector-pattern-plastic-143090549.jpg" position="0 -2 " rotation="-90 0 0"
+          scale="20 20 20"></a-plane>
+
+<!--video-->
+
+</a-assets>
+
+<a-entity
+          geometry="primitive: plane; width: 5; height: 5"
+          position="-4 1 -4"
+          rotation="0 35 0"
+          color="grey"
+          mylink="href: video2.html;"
+          text="width: 5; value: Video; align: center; color: #69CF0D"
+      ></a-entity>
+
+<!--text-->
+<a-text
+    text="width: 6; value: to target
+to profit of
+experience is creating data
+creating data is labour-
+we are constantly working
+to target
+to profit of
+experience is creating data
+creating data is labour-
+we are constantly working
+to target
+to profit of
+experience is creating data
+creating data is labour-
+we are constantly working
+to target
+to profit of
+experience is creating data
+creating data is labour-
+we are constantly working
+to target
+to profit of
+experience is creating data
+creating data is labour-
+we are constantly working
+to target
+to profit of
+experience is creating data
+creating data is labour-
+we are constantly working
+to target
+to profit of
+experience is creating data
+creating data is labour-
+we are constantly working
+to target
+to profit of
+experience is creating data
+creating data is labour-
+we are constantly working
+to target
+to profit of
+experience is creating data
+creating data is labour-
+we are constantly working
+to target
+to profit of
+experience is creating data
+creating data is labour-
+we are constantly working
+to target
+to profit of
+experience is creating data
+creating data is labour-
+we are constantly working
+to target
+to profit of
+experience is creating data
+creating data is labour-
+we are constantly working
+to target
+to profit of
+experience is creating data
+creating data is labour-
+we are constantly working
+to target
+to profit of
+experience is creating data
+creating data is labour-
+we are constantly working
+to target
+to profit of
+experience is creating data
+creating data is labour-
+we are constantly working
+to target
+to profit of
+experience is creating data
+creating data is labour-
+we are constantly working
+to target
+to profit of
+experience is creating data
+creating data is labour-
+we are constantly working
+to target
+to profit of
+experience is creating data
+creating data is labour-
+we are constantly working
+to target
+to profit of
+experience is creating data
+creating data is labour-
+we are constantly working
+to target
+to profit of
+experience is creating data
+creating data is labour-
+we are constantly working
+to target
+to profit of
+experience is creating data
+creating data is labour-
+we are constantly working
+to target
+to profit of
+experience is creating data
+creating data is labour-
+we are constantly working
+to target
+to profit of
+experience is creating data
+creating data is labour-
+we are constantly working
+to target
+to profit of
+experience is creating data
+creating data is labour-
+we are constantly working
+to target
+to profit of
+experience is creating data
+creating data is labour-
+we are constantly working
+to target
+to profit of
+experience is creating data
+creating data is labour-
+we are constantly working
+to target
+to profit of
+experience is creating data
+creating data is labour-
+we are constantly working
+to target
+to profit of
+experience is creating data
+creating data is labour-
+we are constantly working
+to target
+to profit of
+experience is creating data
+creating data is labour-
+we are constantly working
+to target
+to profit of
+experience is creating data
+creating data is labour-
+we are constantly working
+to target
+to profit of
+experience is creating data
+creating data is labour-
+we are constantly working
+to target
+to profit of
+experience is creating data
+creating data is labour-
+we are constantly working
+to target
+to profit of
+experience is creating data
+creating data is labour-
+we are constantly working; align: center; color: #69CF0D"
+    position="-5 38 -15"
+    animation="property: position; to: -5 -30 -15; dur: 30000; easing: easeInOutCirc;loop: true"
+  ></a-text>
+
+  <a-text
+      text="width: 6; value: to target
+  to profit of
+  experience is creating data
+  creating data is labour-
+  we are constantly working
+  to target
+  to profit of
+  experience is creating data
+  creating data is labour-
+  we are constantly working
+  to target
+  to profit of
+  experience is creating data
+  creating data is labour-
+  we are constantly working
+  to target
+  to profit of
+  experience is creating data
+  creating data is labour-
+  we are constantly working
+  to target
+  to profit of
+  experience is creating data
+  creating data is labour-
+  we are constantly working
+  to target
+  to profit of
+  experience is creating data
+  creating data is labour-
+  we are constantly working
+  to target
+  to profit of
+  experience is creating data
+  creating data is labour-
+  we are constantly working
+  to target
+  to profit of
+  experience is creating data
+  creating data is labour-
+  we are constantly working
+  to target
+  to profit of
+  experience is creating data
+  creating data is labour-
+  we are constantly working
+  to target
+  to profit of
+  experience is creating data
+  creating data is labour-
+  we are constantly working
+  to target
+  to profit of
+  experience is creating data
+  creating data is labour-
+  we are constantly working
+  to target
+  to profit of
+  experience is creating data
+  creating data is labour-
+  we are constantly working
+  to target
+  to profit of
+  experience is creating data
+  creating data is labour-
+  we are constantly working
+  to target
+  to profit of
+  experience is creating data
+  creating data is labour-
+  we are constantly working
+  to target
+  to profit of
+  experience is creating data
+  creating data is labour-
+  we are constantly working
+  to target
+  to profit of
+  experience is creating data
+  creating data is labour-
+  we are constantly working
+  to target
+  to profit of
+  experience is creating data
+  creating data is labour-
+  we are constantly working
+  to target
+  to profit of
+  experience is creating data
+  creating data is labour-
+  we are constantly working
+  to target
+  to profit of
+  experience is creating data
+  creating data is labour-
+  we are constantly working
+  to target
+  to profit of
+  experience is creating data
+  creating data is labour-
+  we are constantly working
+  to target
+  to profit of
+  experience is creating data
+  creating data is labour-
+  we are constantly working
+  to target
+  to profit of
+  experience is creating data
+  creating data is labour-
+  we are constantly working
+  to target
+  to profit of
+  experience is creating data
+  creating data is labour-
+  we are constantly working
+  to target
+  to profit of
+  experience is creating data
+  creating data is labour-
+  we are constantly working
+  to target
+  to profit of
+  experience is creating data
+  creating data is labour-
+  we are constantly working
+  to target
+  to profit of
+  experience is creating data
+  creating data is labour-
+  we are constantly working
+  to target
+  to profit of
+  experience is creating data
+  creating data is labour-
+  we are constantly working
+  to target
+  to profit of
+  experience is creating data
+  creating data is labour-
+  we are constantly working
+  to target
+  to profit of
+  experience is creating data
+  creating data is labour-
+  we are constantly working
+  to target
+  to profit of
+  experience is creating data
+  creating data is labour-
+  we are constantly working
+  to target
+  to profit of
+  experience is creating data
+  creating data is labour-
+  we are constantly working
+  to target
+  to profit of
+  experience is creating data
+  creating data is labour-
+  we are constantly working
+  to target
+  to profit of
+  experience is creating data
+  creating data is labour-
+  we are constantly working; align: center; color: #69CF0D"
+      position="5 38 -15"
+      animation="property: position; to: 5 -30 -15; dur: 35000; delay: 10; easing: easeInOutCirc;loop: true"
+    ></a-text>
+
+
+
+
+</a-scene>
+<!--bodies ends-->
+<!--aplanes-->
