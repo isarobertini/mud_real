@@ -95,6 +95,9 @@ but to get unusable" color="black" position="30 0 -20" scale="1 1 1" rotation:"1
       ></a-entity>
 
 <!--bodies-->
+<a-assets>
+  <a-asset-item id="arrow" src="https://cdn.glitch.global/f6e7f4e5-537a-4709-bddf-0cbd0142e229/arrow_3d.glb?v=1674575091633"></a-asset-item>
+</a-assets>
       <a-assets>
         <a-asset-item id="at" src="https://cdn.glitch.global/f6e7f4e5-537a-4709-bddf-0cbd0142e229/at.glb?v=1674489574588"></a-asset-item>
       </a-assets>
@@ -106,11 +109,19 @@ but to get unusable" color="black" position="30 0 -20" scale="1 1 1" rotation:"1
  <a-entity position="0 2 -5" gltf-model="#at"
                 scale="20 20 20"
                 rotation="80 20 -100"
-                animation="property: rotation; dur: 35000;
+                animation="property: rotation; dur: 40000;
                              to: 50 360 110; dir: alternate; loop: false;
                              property: position; to: 0 -4 -20;"
-sound="src:https://cdn.glitch.global/f6e7f4e5-537a-4709-bddf-0cbd0142e229/unterirdischvielleicht%40.mp3?v=1674492363186; autoplay:true; volume: 20;"
+sound="src:https://cdn.glitch.global/f6e7f4e5-537a-4709-bddf-0cbd0142e229/unterirdischvielleicht%40.mp3?v=1674492363186; autoplay:false; on: click; volume: 300"
       ></a-entity>
+      <a-entity position="0 2 -0" gltf-model="#arrow"
+                     scale="0.3 0.3 0.3"
+                     rotation="0 0 0"
+                     animation="property: rotation; dur: 40000;
+                                  to: 50 360 110; dir: alternate; loop: false;
+                                  property: position; to: 0 0 -10;"
+     sound="src:https://cdn.glitch.global/f6e7f4e5-537a-4709-bddf-0cbd0142e229/unterirdischvielleicht%40.mp3?v=1674492363186; autoplay:false; on: click; volume: 300"
+           ></a-entity>
 
       <a-entity position="0 0 -6" gltf-model="#treasure"
                 scale="0.1 0.1 0.1"
