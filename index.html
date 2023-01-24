@@ -1,39 +1,99 @@
+
 <!DOCTYPE html>
 <html>
-
   <head>
-  <meta name="viewport" content="width=device-width, initial-scale=0.5">
-
-  <style>
-  div {
-    width: 120px;
-    height: 70px;
-    background-color: grey;
-    font-weight: bold;
-    position: relative;
-    animation: mymove 10s infinite;
-    href="index2.html"
-
-  }
-
-  #div1 {animation-timing-function: do you want to enter?;}
-
-
-  @keyframes mymove {
-    from {left: 0px;}
-    to {left: 300px;}
-  }
-  </style>
+    <meta charset="utf-8">
+    <title>underneath the structure</title>
+    <meta name="description" content="underneath the structure">
+    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-physics-system@1.4.0/dist/aframe-physics-system.min.js"></script>
+    <script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
+<!--This script is new-->
+<script>
+  // component declaration
+  AFRAME.registerComponent("mylink", {
+    // define a url in the schema
+    schema: {
+      href: {}
+    },
+    init: function() {
+      // when clicked - change the location:
+      this.el.addEventListener("click", (e) => {
+        window.location = this.data.href;
+      })
+    }
+  })
+</script>
   </head>
   <body>
-<h1>Welcome to this website, to Mudify. Please watch the video before continuing</h1>
+    <a-scene background="color: darkgreen"
+       cursor="rayOrigin: mouse"
+            fog="type: exponential; density: 0.1; color: #57B403;"
+            animation="property: fog.color; dur: 7000;
+                      from: #57B403; to: #69CF0D;
+                      loop: indefinite; dir: alternate">
 
-<video position="relative" width="100%" height="auto" controls="0" reload="auto">
-  <source src="https://cdn.glitch.global/f6e7f4e5-537a-4709-bddf-0cbd0142e229/VIDEO-2023-01-22-18-00-42.mp4?v=1674578203867" type="video/mp4">
+     <a-light type="point" color="#544A2C" intensity="1" position="0 0 0"
+              animation="property: light.intensity;
+                         dur: 7000; from: 5; to: 3;
+                         dir: alternate; loop: true">
 
-</video>
-<a href="index2.html">Click here to travel to mudify</a>
-  Your browser does not support the video tag.
+  </a-light>
 
-  <div id="div1">do you want to enter Mudify?</div>
-</body>
+
+
+<!--text animated-->
+
+<!--bodies-->
+<a-assets>
+  <a-asset-item id="arrow" src="https://cdn.glitch.global/f6e7f4e5-537a-4709-bddf-0cbd0142e229/arrow_3d.glb?v=1674575091633"></a-asset-item>
+</a-assets>
+      <a-assets>
+        <a-asset-item id="at" src="https://cdn.glitch.global/f6e7f4e5-537a-4709-bddf-0cbd0142e229/at.glb?v=1674489574588"></a-asset-item>
+      </a-assets>
+
+
+      <a-entity
+      position="0 0 -2"
+        geometry="primitive: plane"
+        material="opacity=100%"
+        animation__mouseenter="property: rotation; to: to: 0 360 -20; color; to: blue; startEvents: mouseenter; dur: 500";
+        animation__mouseleave="property: rotation; to: 0 360 -20; type: color; to: red; startEvents: mouseleave; dur: 500";>
+      </a-entity>
+
+ <a-entity position="0 0 -7" gltf-model="#at"
+                scale="5 5 5"
+                rotation="0 0 -20"
+                animation__mouseenter="property: rotation; to: 0 360 -20; startEvents: mouseenter; dur: 10000"
+                animation__mouseleave="property: rotation; to: 0 360 -20; startEvents: mouseleave; dur: 10000"
+sound="src:https://cdn.glitch.global/f6e7f4e5-537a-4709-bddf-0cbd0142e229/AUDIO-2023-01-24-20-11-33.mp3?v=1674588404698; autoplay:false; on: click; volume: 300"
+      ></a-entity>
+      <a-entity position="0 3 -7" gltf-model="#arrow"
+                     scale="0.3 0.3 0.3"
+                     rotation="0 0 0"
+
+     sound="src:https://cdn.glitch.global/f6e7f4e5-537a-4709-bddf-0cbd0142e229/AUDIO-2023-01-24-20-11-33.mp3?v=1674588404698; autoplay:false; on: click; volume: 300"
+           ></a-entity>
+
+
+
+      <a-entity position="0 0 -6" gltf-model="#treasure"
+                scale="0.1 0.1 0.1"
+                rotation="0 0 0"
+                animation="property: rotation; dur: 10000;
+                           to: 0 360 0; loop: true"
+                sound="src:https://cdn.glitch.global/f6e7f4e5-537a-4709-bddf-0cbd0142e229/unterirdischvielleicht%40.mp3?v=1674492363186; autoplay:false; on: click; volume: 20;"
+      ></a-entity>
+
+      <!--  animation="property: rotation; dur: 10000;
+
+    </a-scene>
+  </body>
+</html>
+
+
+
+
+
+  </a-scene>
+  </body>
