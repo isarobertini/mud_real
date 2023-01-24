@@ -1,60 +1,11 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Virtual Mud</title>
-    <meta name="description" content="Virtual mud">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-	<meta name="viewport" content="width=device-width,initial-scale=1.5,user-scalable=no">
+<body>
 
-	<script src="compressed.js" type="text/javascript" charset="utf-8"></script>
-    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
-    <script src="https://unpkg.com/aframe-physics-system@1.4.0/dist/aframe-physics-system.min.js"></script>
-    <script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
+<video width="320" height="240" autoplay>
+  <source src="https://cdn.glitch.global/f6e7f4e5-537a-4709-bddf-0cbd0142e229/VIDEO-2023-01-22-18-00-42.mp4?v=1674578203867" type="video/mp4">
+  <source src="movie.ogg" type="video/ogg">
+  Your browser does not support the video tag.
+</video>
 
-
-    </head>
-
-<!--This script is new-->
-<script>
-  // component declaration
-  AFRAME.registerComponent("mylink", {
-    // define a url in the schema
-    schema: {
-      href: {}
-    },
-    init: function() {
-      // when clicked - change the location:
-      this.el.addEventListener("click", (e) => {
-        window.location = this.data.href;
-      })
-    }
-  })
-</script>
-
-  <body>
- <a-scene background="color: black"
-    cursor="rayOrigin: mouse"
-         fog="type: exponential; density: 0.1; color: black;"
-         animation="property: fog.color; dur: 7000;
-                   from: #69CF0D; to: #57B403;
-                   loop: indefinite; dir: alternate">
-
-  <a-light type="point" color="white" intensity="1" position="0 0 0"
-           animation="property: light.intensity;
-                      dur: 7000; from: 5; to: 5;
-                      dir: alternate; loop: true">
-
-  </a-light>
-
-
-<!--bodies-->
-<a-assets>
-    <video id="atvideo" autoplay loop="true" src="https://cdn.glitch.global/f6e7f4e5-537a-4709-bddf-0cbd0142e229/VIDEO-2023-01-22-18-00-42.mp4?v=1674578203867" webkit-playsinline></video>
-</a-assets>
-
-
-<a-scene physics>
-
- <a-video src="#atvideos" width="16" height="9" position="0 0 -20"></a-video>
-<!--balls 1-->
+</body>
