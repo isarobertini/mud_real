@@ -26,6 +26,8 @@
 </script>
   </head>
   <body>
+    <a-entity id="mouseCursor" cursor="rayOrigin: mouse" raycaster="objects: #at"></a-entity>
+
     <a-scene background="color: darkgreen"
        cursor="rayOrigin: mouse"
             fog="type: exponential; density: 0.1; color: #57B403;"
@@ -49,7 +51,7 @@
   <a-asset-item id="arrow" src="https://cdn.glitch.global/f6e7f4e5-537a-4709-bddf-0cbd0142e229/arrow_3d.glb?v=1674575091633"></a-asset-item>
 </a-assets>
       <a-assets>
-        <a-asset-item id="at" src="https://cdn.glitch.global/f6e7f4e5-537a-4709-bddf-0cbd0142e229/at.glb?v=1674489574588"></a-asset-item>
+        <a-asset-item id="box" src="https://cdn.glitch.global/f6e7f4e5-537a-4709-bddf-0cbd0142e229/at.glb?v=1674489574588"></a-asset-item>
       </a-assets>
 
 
@@ -61,11 +63,13 @@
         animation__mouseleave="property: rotation; to: 0 360 -20; type: color; to: red; startEvents: mouseleave; dur: 500";>
       </a-entity>
 
- <a-entity position="0 0 -7" gltf-model="#at"
+ <a-entity position="0 0 -7" gltf-model="#box"
                 scale="5 5 5"
-                rotation="0 0 -20"
-                animation__mouseenter="property: rotation; to: 0 360 -20; startEvents: mouseenter; dur: 10000"
-                animation__mouseleave="property: rotation; to: 0 360 -20; startEvents: mouseleave; dur: 10000"
+                rotation="0 110 -20"
+                animation="property: rotation; to: 0 490 -20;  startEvents: mouseenter; dur: 16000"
+                animation="property: rotation; to: 0 490 -20;  startEvents: mouseleave; dur: 16000"
+                animation__2="property: position; delay: 19000; easing: easeInOutElastic; from: 0 0 -7; to: 0 -5 -7; dur: 15000;"
+
 sound="src:https://cdn.glitch.global/f6e7f4e5-537a-4709-bddf-0cbd0142e229/AUDIO-2023-01-24-20-11-33.mp3?v=1674588404698; autoplay:false; on: click; volume: 300"
       ></a-entity>
       <a-entity position="0 3 -7" gltf-model="#arrow"
@@ -77,13 +81,7 @@ sound="src:https://cdn.glitch.global/f6e7f4e5-537a-4709-bddf-0cbd0142e229/AUDIO-
 
 
 
-      <a-entity position="0 0 -6" gltf-model="#treasure"
-                scale="0.1 0.1 0.1"
-                rotation="0 0 0"
-                animation="property: rotation; dur: 10000;
-                           to: 0 360 0; loop: true"
-                sound="src:https://cdn.glitch.global/f6e7f4e5-537a-4709-bddf-0cbd0142e229/unterirdischvielleicht%40.mp3?v=1674492363186; autoplay:false; on: click; volume: 20;"
-      ></a-entity>
+
 
       <!--  animation="property: rotation; dur: 10000;
 
