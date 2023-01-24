@@ -1,2 +1,11 @@
-font-family: 'Audiowide', cursive;
-font-family: 'Dancing Script', cursive;
+body {
+    background: dodgerblue linear-gradient(45deg, aqua, dodgerblue, deeppink) fixed;
+
+}
+#comment-box, #post {
+    border: none;
+    border-radius: 5px;
+}
+#post:hover{
+    background-color: deeppink;
+}

@@ -1,3 +1,16 @@
+var post= document.getElementById("post");
+post.addEventListener("click", function(){
+    var commentBoxValue= document.getElementById("comment-box").value;
+
+    var li = document.createElement("li");
+    var text = document.createTextNode(commentBoxValue);
+    li.appendChild(text);
+    document.getElementById("unordered").appendChild(li);
+
+});
+
+
+
 navigator.xr.addEventListener('sessiongranted', function (evt) {
    // One could check for the type of session granted.
    // Events notifies of session creation after navigation, UA action, or requestSession.
