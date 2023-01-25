@@ -30,16 +30,16 @@
 </script>
 
   <body>
- <a-scene background="color: #657B403"
+ <a-scene background="color:  #1E8449"
     cursor="rayOrigin: mouse"
-         fog="type: exponential; density: 0.1; color: #544A2C;"
+         fog="type: exponential; density: 0.1; color:  #389500  ;"
          animation="property: fog.color; dur: 7000;
-                   from: #57B403; to: #57B403;
+                   from:  #389500 ; to: #389500 ;
                    loop: indefinite; dir: alternate">
 
-  <a-light type="point" color="#544A2C" intensity="0.1" position="0 60 30"
+  <a-light type="point" color="darkgray" intensity="0.1" position="0 -3 0"
            animation="property: light.intensity;
-                      dur: 7000; from: 1; to: -0.5;
+                      dur: 15000; from: -5; to: 0.5;
                       dir: alternate; loop: true">
 
   </a-light>
@@ -55,13 +55,13 @@
 <a-entity position="5 6 -7" gltf-model="#arrow"
           scale="0.1 0.1 0.1"
           rotation="0 30 30"
-          sound="src:https://cdn.glitch.global/f6e7f4e5-537a-4709-bddf-0cbd0142e229/arrow_3d.glb?v=1674575091633; autoplay:false; on: click"
+          sound="src:https://cdn.glitch.global/f6e7f4e5-537a-4709-bddf-0cbd0142e229/arrow_3d.glb?v=1674575091633; autoplay:false; volume: 900;on: click"
 ></a-entity>
 
 <a-entity position="0 4.5 -7" gltf-model="#treasure"
           scale="3 3 3"
           rotation="90 20 -100"
-          mylink="href: video.html;"
+          mylink="href: comment.html;"
 
 ></a-entity>
 <a-entity position="0 6 -7" gltf-model="#arrow"
@@ -89,17 +89,16 @@
     landscape of bodies, data, virtual mud
     the algorithm can be made like a
     biased myth to form
-to categorise; align: center; color: black"
+to categorise; align: center; color: white"
     position="2 1.5 0"
     animation="property: position; to: -9 4 -7; dur: 30000; dir: easeInOutCirc; dir: alternate; loop: true"
   ></a-text>
 
   <a-text
-      text="width: 6; value: to target
-to profit of
-experience is creating data
-creating data is labour-
- we are constantly working; align: center; color: black"
+      text="width: 6; value: To travel,
+      to activate, to contribute,
+      to share, press one of the @ that
+      the arrow is pointing at; align: center; color: white"
       position="1 4 -15"
       animation="property: position; to: 1 3 -4; dur: 30000; easing: easeInOutCirc; dir: alternate;loop: true"
     ></a-text>
