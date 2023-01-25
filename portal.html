@@ -1,0 +1,126 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>underneath the structure</title>
+    <meta name="description" content="underneath the structure">
+    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-physics-system@1.4.0/dist/aframe-physics-system.min.js"></script>
+    <script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
+<!--This script is new-->
+<script>
+  // component declaration
+  AFRAME.registerComponent("mylink", {
+    // define a url in the schema
+    schema: {
+      href: {}
+    },
+    init: function() {
+      // when clicked - change the location:
+      this.el.addEventListener("click", (e) => {
+        window.location = this.data.href;
+      })
+    }
+  })
+</script>
+  </head>
+  <body>
+    <a-entity id="mouseCursor" cursor="rayOrigin: mouse" raycaster="objects: #at"></a-entity>
+
+    <a-scene background="color: darkgreen"
+       cursor="rayOrigin: mouse"
+            fog="type: exponential; density: 0.10; color: #777777;"
+            animation="property: fog.color; dur: 7000;
+                      from: #777777; to: #777777;
+                      loop: indefinite; dir: alternate">
+
+     <a-light type="point" color="#777777" intensity="1" position="0 0 0"
+              animation="property: light.intensity;
+                         dur: 7000; from: 1; to: 2;
+                         dir: alternate; loop: true">
+
+  </a-light>
+
+
+
+<!--text animated-->
+
+<!--bodies-->
+<a-assets>
+  <a-asset-item id="arrow" src="https://cdn.glitch.global/f6e7f4e5-537a-4709-bddf-0cbd0142e229/arrow_3d.glb?v=1674575091633"></a-asset-item>
+</a-assets>
+      <a-assets>
+        <a-asset-item id="box" src="https://cdn.glitch.global/f6e7f4e5-537a-4709-bddf-0cbd0142e229/at.glb?v=1674489574588"></a-asset-item>
+      </a-assets>
+
+
+      <a-entity
+      position="0 0 -2"
+        geometry="primitive: plane"
+        material="side: double; color: #EF2D5E; transparent: true; opacity: 0.0"
+        animation__mouseenter="property: rotation; to: to: 0 360 -20; color; to: blue; startEvents: mouseenter; dur: 500";
+        animation__mouseleave="property: rotation; to: 0 360 -20; type: color; to: red; startEvents: mouseleave; dur: 500";>
+      </a-entity>
+
+ <a-entity position="0 0 -7" gltf-model="#box"
+                scale="5 5 5"
+                rotation="0 110 -20"
+                animation="property: rotation; to: 0 490 -20;  startEvents: mouseenter; dur: 15000"
+                animation="property: rotation; to: 0 490 -20;  startEvents: mouseleave; dur: 15000"
+                animation__2="property: position; delay: 19000; easing: easeInOutElastic; from: 0 0 -7; to: 0 -20 -7; dur: 12000;"
+
+sound="src:https://cdn.glitch.global/f6e7f4e5-537a-4709-bddf-0cbd0142e229/AUDIO-2023-01-24-20-11-33.mp3?v=1674588404698; autoplay:false; on: click; volume: 300"
+      ></a-entity>
+      <a-entity position="0 3 -7" gltf-model="#arrow"
+                     scale="0.3 0.3 0.3"
+                     rotation="0 0 0"
+
+     sound="src:https://cdn.glitch.global/f6e7f4e5-537a-4709-bddf-0cbd0142e229/AUDIO-2023-01-24-20-11-33.mp3?v=1674588404698; autoplay:false; on: click; volume: 300"
+           ></a-entity>
+
+           <a-entity
+           position="0 -2 -50"
+           rotation="0 0 0"
+           text="width: 6; value: Would you like to
+           enter Mudify?; align: center; color: white"
+             geometry="primitive: plane; width: 4; height: 3"
+             material="color: #3E3E3E"
+             animation="property: position; delay: 25000; easing: easeInElastic; from: 0 -2 -50; to: 0 0 -7; dur: 7000"
+              ></a-entity>
+
+              <a-entity
+              position="0 -2 -50"
+              rotation="0 0 0"
+              text="width: 6; value: No; align: center; color: white"
+                geometry="primitive: plane; width: 1; height: 1"
+                material="color: #3E3E3E"
+                mylink="href:index.html;"
+                animation="property: position; delay: 25000; easing: easeInElastic; from: 0 -2 -50; to: -2 0 -6; dur: 7000"
+                 ></a-entity>
+
+                 <a-entity
+                 position="0 -2 -50"
+                 rotation="0 0 0"
+                 text="width: 6; value: Yes; align: center; color: white"
+                   geometry="primitive: plane; width: 1; height: 1"
+                   material="color: #3E3E3E"
+                   mylink="href:body.html;"
+                   animation="property: position; delay: 25000; easing: easeInElastic; from: 2 -2 -50; to: 2 0 -6; dur: 7000"
+                    ></a-entity>
+
+
+
+
+      <!--  animation="property: rotation; dur: 10000;
+
+    </a-scene>
+  </body>
+</html>
+
+
+
+
+
+  </a-scene>
+  </body>

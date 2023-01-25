@@ -1,13 +1,17 @@
-
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
-    <title>underneath the structure</title>
-    <meta name="description" content="underneath the structure">
+    <title>Virtual Mud</title>
+    <meta name="description" content="Virtual mud">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="viewport" content="width=device-width,initial-scale=1.5,user-scalable=no">
+	<script src="compressed.js" type="text/javascript" charset="utf-8"></script>
     <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
     <script src="https://unpkg.com/aframe-physics-system@1.4.0/dist/aframe-physics-system.min.js"></script>
     <script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
+    </head>
+
 <!--This script is new-->
 <script>
   // component declaration
@@ -24,102 +28,344 @@
     }
   })
 </script>
-  </head>
+
   <body>
-    <a-entity id="mouseCursor" cursor="rayOrigin: mouse" raycaster="objects: #at"></a-entity>
+ <a-scene background="color: #657B403"
+    cursor="rayOrigin: mouse"
+         fog="type: exponential; density: 0.1; color: #544A2C;"
+         animation="property: fog.color; dur: 7000;
+                   from: #57B403; to: #57B403;
+                   loop: indefinite; dir: alternate">
 
-    <a-scene background="color: darkgreen"
-       cursor="rayOrigin: mouse"
-            fog="type: exponential; density: 0.10; color: #777777;"
-            animation="property: fog.color; dur: 7000;
-                      from: #777777; to: #777777;
-                      loop: indefinite; dir: alternate">
-
-     <a-light type="point" color="#777777" intensity="1" position="0 0 0"
-              animation="property: light.intensity;
-                         dur: 7000; from: 1; to: 2;
-                         dir: alternate; loop: true">
+  <a-light type="point" color="#544A2C" intensity="0.1" position="0 60 30"
+           animation="property: light.intensity;
+                      dur: 7000; from: 1; to: -0.5;
+                      dir: alternate; loop: true">
 
   </a-light>
 
+<a-plane position="0 0.5 -2.8" height="2.2" width="2.2" material="opacity: 0" mylink="href: body.html;"></a-plane>
+
+<!--links-->
+<a-entity position="5 4.5 -7" gltf-model="#treasure"
+          scale="3 3 3"
+          rotation="90 20 -100"
+          sound="src:https://cdn.glitch.global/f6e7f4e5-537a-4709-bddf-0cbd0142e229/Ringing%20Ambient%20Background.mp3?v=1673801748645; autoplay:false; on: click"
+></a-entity>
+<a-entity position="5 6 -7" gltf-model="#arrow"
+          scale="0.1 0.1 0.1"
+          rotation="0 30 30"
+          sound="src:https://cdn.glitch.global/f6e7f4e5-537a-4709-bddf-0cbd0142e229/arrow_3d.glb?v=1674575091633; autoplay:false; on: click"
+></a-entity>
+
+<a-entity position="0 4.5 -7" gltf-model="#treasure"
+          scale="3 3 3"
+          rotation="90 20 -100"
+          mylink="href: video.html;"
+
+></a-entity>
+<a-entity position="0 6 -7" gltf-model="#arrow"
+          scale="0.1 0.1 0.1"
+          rotation="0 30 30"
+          mylink="href: video.html;"
+></a-entity>
+<a-entity position="-5 4.5 -7" gltf-model="#treasure"
+          scale="3 3 3"
+          rotation="90 20 -100"
+          mylink="href: portal.html;"
+
+></a-entity>
+<a-entity position="-5 6 -7" gltf-model="#arrow"
+          scale="0.1 0.1 0.1"
+          rotation="0 30 30"
+          mylink="href: portal.html;"
+></a-entity>
 
 
-<!--text animated-->
+<!--text-->
+
+<a-text
+    text="width: 6; value: you are entering this room,
+    landscape of bodies, data, virtual mud
+    the algorithm can be made like a
+    biased myth to form
+to categorise; align: center; color: black"
+    position="2 1.5 0"
+    animation="property: position; to: -9 4 -7; dur: 30000; dir: easeInOutCirc; dir: alternate; loop: true"
+  ></a-text>
+
+  <a-text
+      text="width: 6; value: to target
+to profit of
+experience is creating data
+creating data is labour-
+ we are constantly working; align: center; color: black"
+      position="1 4 -15"
+      animation="property: position; to: 1 3 -4; dur: 30000; easing: easeInOutCirc; dir: alternate;loop: true"
+    ></a-text>
 
 <!--bodies-->
+<a-scene physics>
+
+
+  <a-plane src="https://thumbs.dreamstime.com/b/hipster-green-chess-board-vector-pattern-plastic-143090549.jpg" position="0 -2 0" rotation="-90 0 0"
+          scale="30 70 50" sound="src:https://cdn.glitch.global/f6e7f4e5-537a-4709-bddf-0cbd0142e229/%40mudyfystartpage.mp3?v=1674490800628; autoplay: true; loop: true;"></a-plane>
+
+
+<!--balls 1-->
+
 <a-assets>
   <a-asset-item id="arrow" src="https://cdn.glitch.global/f6e7f4e5-537a-4709-bddf-0cbd0142e229/arrow_3d.glb?v=1674575091633"></a-asset-item>
 </a-assets>
-      <a-assets>
-        <a-asset-item id="box" src="https://cdn.glitch.global/f6e7f4e5-537a-4709-bddf-0cbd0142e229/at.glb?v=1674489574588"></a-asset-item>
-      </a-assets>
+
+<a-assets>
+  <a-asset-item id="treasure" src="https://cdn.glitch.global/f6e7f4e5-537a-4709-bddf-0cbd0142e229/at.glb?v=1674489574588"></a-asset-item>
+</a-assets>
+
+<a-entity position="-9 -5 -6" gltf-model="#treasure"
+          scale="6 6 6"
+          rotation="90 30 -100"
+          animation="property: position; to: -9 0.5 -6; dur: 10000; easing: easeInOutElastic; dir: alternate; loop: true"
+          sound="src:https://cdn.glitch.global/f6e7f4e5-537a-4709-bddf-0cbd0142e229/Ringing%20Ambient%20Background.mp3?v=1673801748645; autoplay:false; on: click; volume: 300"
+></a-entity>
+
+<a-entity position="-3 -5 -6" gltf-model="#treasure"
+          scale="6 6 6"
+          rotation="90 30 -100"
+          animation="property: position; to: -2 0.5 -6; dur: 12000; easing: easeInOutElastic; dir: alternate; loop: true"
+          sound="src:https://cdn.glitch.global/f6e7f4e5-537a-4709-bddf-0cbd0142e229/Ringing%20Ambient%20Background.mp3?v=1673801748645; autoplay:false; on: click; volume: 300"
+></a-entity>
+
+<a-entity position="5 -5 -6" gltf-model="#treasure"
+          scale="6 6 6"
+          rotation="90 30 -100"
+          animation="property: position; to: 5 1 -6; dur: 12000; easing: easeInOutElastic; dir: alternate;loop: true"
+          sound="src:https://cdn.glitch.global/f6e7f4e5-537a-4709-bddf-0cbd0142e229/Ringing%20Ambient%20Background.mp3?v=1673801748645; autoplay:false; on: click"
+></a-entity>
+
+<a-entity position="12 -5 -6" gltf-model="#treasure"
+          scale="6 6 6"
+          rotation="90 30 -100"
+          animation="property: position; to: 12 1 -6; dur: 13000; easing: easeInOutElastic; loop: false"
+          sound="src:https://cdn.glitch.global/f6e7f4e5-537a-4709-bddf-0cbd0142e229/Ringing%20Ambient%20Background.mp3?v=1673801748645; autoplay:false; on: click"
+></a-entity>
+
+<!--balls 2-->
 
 
-      <a-entity
-      position="0 0 -2"
-        geometry="primitive: plane"
-        material="side: double; color: #EF2D5E; transparent: true; opacity: 0.0"
-        animation__mouseenter="property: rotation; to: to: 0 360 -20; color; to: blue; startEvents: mouseenter; dur: 500";
-        animation__mouseleave="property: rotation; to: 0 360 -20; type: color; to: red; startEvents: mouseleave; dur: 500";>
-      </a-entity>
+<a-entity position="-12 2 -12" gltf-model="#treasure"
+          scale="6 6 6"
+          rotation="100 20 -100"
 
- <a-entity position="0 0 -7" gltf-model="#box"
-                scale="5 5 5"
-                rotation="0 110 -20"
-                animation="property: rotation; to: 0 490 -20;  startEvents: mouseenter; dur: 15000"
-                animation="property: rotation; to: 0 490 -20;  startEvents: mouseleave; dur: 15000"
-                animation__2="property: position; delay: 19000; easing: easeInOutElastic; from: 0 0 -7; to: 0 -20 -7; dur: 12000;"
+></a-entity>
 
-sound="src:https://cdn.glitch.global/f6e7f4e5-537a-4709-bddf-0cbd0142e229/AUDIO-2023-01-24-20-11-33.mp3?v=1674588404698; autoplay:false; on: click; volume: 300"
-      ></a-entity>
-      <a-entity position="0 3 -7" gltf-model="#arrow"
-                     scale="0.3 0.3 0.3"
-                     rotation="0 0 0"
+<a-entity position="-5 2 -12" gltf-model="#treasure"
+          scale="6 6 6"
+          rotation="90 20 -100"
 
-     sound="src:https://cdn.glitch.global/f6e7f4e5-537a-4709-bddf-0cbd0142e229/AUDIO-2023-01-24-20-11-33.mp3?v=1674588404698; autoplay:false; on: click; volume: 300"
-           ></a-entity>
+></a-entity>
+<a-entity position="2 2 -12" gltf-model="#treasure"
+          scale="6 6 6"
+          rotation="90 20 -100"
 
-           <a-entity
-           position="0 -2 -50"
-           rotation="0 0 0"
-           text="width: 6; value: Would you like to
-           enter Mudify?; align: center; color: white"
-             geometry="primitive: plane; width: 4; height: 3"
-             material="color: #3E3E3E"
-             animation="property: position; delay: 25000; easing: easeInElastic; from: 0 -2 -50; to: 0 0 -7; dur: 7000"
-              ></a-entity>
+></a-entity>
 
-              <a-entity
-              position="0 -2 -50"
-              rotation="0 0 0"
-              text="width: 6; value: No; align: center; color: white"
-                geometry="primitive: plane; width: 1; height: 1"
-                material="color: #3E3E3E"
-                animation="property: position; delay: 25000; easing: easeInElastic; from: 0 -2 -50; to: -2 0 -6; dur: 7000"
-                 ></a-entity>
+<a-entity position="9 2 -12" gltf-model="#treasure"
+          scale="6 6 6"
+          rotation="90 20 -100"
 
-                 <a-entity
-                 position="0 -2 -50"
-                 rotation="0 0 0"
-                 text="width: 6; value: Yes; align: center; color: white"
-                   geometry="primitive: plane; width: 1; height: 1"
-                   material="color: #3E3E3E"
-                   mylink="href:index2.html;"
-                   animation="property: position; delay: 25000; easing: easeInElastic; from: 2 -2 -50; to: 2 0 -6; dur: 7000"
+></a-entity>
+
+<!--balls 2-->
+
+<a-entity position="-9 2 -16" gltf-model="#treasure"
+          scale="6 6 6"
+          rotation="90 20 -100"
+
+
+></a-entity>
+
+<a-entity position="-2 2 -16" gltf-model="#treasure"
+          scale="6 6 6"
+          rotation="90 20 -100"
+></a-entity>
+<a-entity position="5 2 -16" gltf-model="#treasure"
+          scale="6 6 6"
+          rotation="90 20 -100"
+
+></a-entity>
+<a-entity position="12 2 -16" gltf-model="#treasure"
+          scale="6 6 6"
+          rotation="90 20 -100"
+
+></a-entity>
+
+  <!--balls 3-->
+  <a-entity position="-12 -4 -20" gltf-model="#treasure"
+            scale="6 6 6"
+            rotation="90 20 -100"
+
+  <a-entity position="-5 -4 -20" gltf-model="#treasure"
+            scale="6 6 6"
+            rotation="90 20 -100"
+
+></a-entity>
+
+  <a-entity position="2 -4 -20" gltf-model="#treasure"
+            scale="6 6 6"
+            rotation="90 20 -100"
+></a-entity>
+  <a-entity position="9 -4 -20" gltf-model="#treasure"
+            scale="6 6 6"
+            rotation="90 20 -100"
+
+  ></a-entity>
+
+
+    <!-- balls 4-->
+    <a-entity position="-9 5 -25" gltf-model="#treasure"
+              scale="6 6 6"
+              rotation="90 20 -100"
+  ></a-entity>
+    <a-entity position="-2 5 -25" gltf-model="#treasure"
+              scale="6 6 6"
+              rotation="90 20 -100"
+  ></a-entity>
+    <a-entity position="5 5 -25" gltf-model="#treasure"
+              scale="6 6 6"
+              rotation="90 20 -100"
+    ></a-entity>
+    <a-entity position="12 5 -25" gltf-model="#treasure"
+              scale="6 6 6"
+              rotation="90 20 -100"
+
+    ></a-entity>
+
+
+                <!-- BACK balls 1-->
+                <a-entity position="-9 0.5 6" gltf-model="#treasure"
+                          scale="6 6 6"
+                          rotation="60 -30 -120"
+
+                ></a-entity>
+
+                <a-entity position="-2 0.5 6" gltf-model="#treasure"
+                          scale="6 6 6"
+                          rotation="60 -30 -120"
+
+                ></a-entity>
+
+                <a-entity position="5 1 6" gltf-model="#treasure"
+                          scale="6 6 6"
+                          rotation="60 -30 -120"
+
+                ></a-entity>
+
+                <a-entity position="12 1 6" gltf-model="#treasure"
+                          scale="6 6 6"
+                          rotation="60 -30 -120"
+
+                ></a-entity>
+
+                <!-- BACK balls 2-->
+
+                <a-entity position="-12 2 12" gltf-model="#treasure"
+                          scale="6 6 6"
+                          rotation="60 -30 -120"
+
+                ></a-entity>
+
+                <a-entity position="-5 2 12" gltf-model="#treasure"
+                          scale="6 6 6"
+                          rotation="60 -30 -120"
+
+                ></a-entity>
+                <a-entity position="2 2 12" gltf-model="#treasure"
+                          scale="6 6 6"
+                          rotation="60 -30 -120"
+
+                ></a-entity>
+
+                <a-entity position="9 2 12" gltf-model="#treasure"
+                          scale="6 6 6"
+                          rotation="60 -30 -120"
+
+                <!-- BACK balls 2-->
+                <a-entity position="-9 3 16" gltf-model="#treasure"
+                          scale="6 6 6"
+                          rotation="60 -30 -120"
+
+                ></a-entity>
+
+                <a-entity position="-2 3 16" gltf-model="#treasure"
+                          scale="6 6 6"
+                          rotation="60 -30 -120"
+
+                ></a-entity>
+                <a-entity position="5 3 16" gltf-model="#treasure"
+                          scale="6 6 6"
+                          rotation="60 -30 -120"
+
+                ></a-entity>
+                <a-entity position="12 3 16" gltf-model="#treasure"
+                          scale="6 6 6"
+                          rotation="60 -30 -120"
+
+                ></a-entity>
+
+
+
+                  <!-- BACK balls 3-->
+                  <a-entity position="-12 4 20" gltf-model="#treasure"
+                            scale="6 6 6"
+                            rotation="60 -30 -120"
+                  ></a-entity>
+                  <a-entity position="-5 4 20" gltf-model="#treasure"
+                            scale="6 6 6"
+                            rotation="60 -30 -120"
+                            sound="src:https://cdn.glitch.global/f6e7f4e5-537a-4709-bddf-0cbd0142e229/Ringing%20Ambient%20Background.mp3?v=1673801748645; autoplay:false; on: click"
+                  ></a-entity>
+
+                  <a-entity position="2 4 20" gltf-model="#treasure"
+                            scale="6 6 6"
+                            rotation="60 30 -120"
+                            sound="src:https://cdn.glitch.global/f6e7f4e5-537a-4709-bddf-0cbd0142e229/Ringing%20Ambient%20Background.mp3?v=1673801748645; autoplay:false; on: click"
+                  ></a-entity>
+                  <a-entity position="9 4 20" gltf-model="#treasure"
+                            scale="6 6 6"
+                            rotation="60 -30 -120"
+                            sound="src:https://cdn.glitch.global/f6e7f4e5-537a-4709-bddf-0cbd0142e229/Ringing%20Ambient%20Background.mp3?v=1673801748645; autoplay:false; on: click"
+                  ></a-entity>
+
+                    <!-- BACK balls 4-->
+                    <a-entity position="-9 5 25" gltf-model="#treasure"
+                              scale="6 6 6"
+                              rotation="60 -30 -120"
+                              sound="src:https://cdn.glitch.global/f6e7f4e5-537a-4709-bddf-0cbd0142e229/Ringing%20Ambient%20Background.mp3?v=1673801748645; autoplay:false; on: click"
+                    ></a-entity>
+                    <a-entity position="-2 5 25" gltf-model="#treasure"
+                              scale="6 6 6"
+                              rotation="60 -30 -120"
+                              sound="src:https://cdn.glitch.global/f6e7f4e5-537a-4709-bddf-0cbd0142e229/Ringing%20Ambient%20Background.mp3?v=1673801748645; autoplay:false; on: click"
+                    ></a-entity>
+                    <a-entity position="5 5 25" gltf-model="#treasure"
+                              scale="6 6 6"
+                              rotation="60 -30 -120"
+                              sound="src:https://cdn.glitch.global/f6e7f4e5-537a-4709-bddf-0cbd0142e229/Ringing%20Ambient%20Background.mp3?v=1673801748645; autoplay:false; on: click"
+                    ></a-entity>
+                    <a-entity position="12 5 25" gltf-model="#treasure"
+                              scale="6 6 6"
+                              rotation="60 -30 -120"
+                              sound="src:https://cdn.glitch.global/f6e7f4e5-537a-4709-bddf-0cbd0142e229/Ringing%20Ambient%20Background.mp3?v=1673801748645; autoplay:false; on: click"
                     ></a-entity>
 
 
 
 
-      <!--  animation="property: rotation; dur: 10000;
 
-    </a-scene>
-  </body>
-</html>
+  <a-sky color="#69CF0D"></a-sky>
 
 
-
-
-
-  </a-scene>
-  </body>
+</a-scene>
+<!--bodies ends-->
+<!--aplanes-->
