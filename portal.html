@@ -28,19 +28,18 @@
   <body>
     <a-entity id="mouseCursor" cursor="rayOrigin: mouse" raycaster="objects: #at"></a-entity>
 
-    <a-scene background="color: darkgreen"
-       cursor="rayOrigin: mouse"
-            fog="type: exponential; density: 0.10; color: #777777;"
-            animation="property: fog.color; dur: 7000;
-                      from: #777777; to: #777777;
-                      loop: indefinite; dir: alternate">
+    <body>
+   <a-scene background="color: darkgreen"
+      cursor="rayOrigin: mouse"
+           <a-scene fog="type: linear; color: darkgreen; far: 15; near:0">
 
-     <a-light type="point" color="#777777" intensity="1" position="0 0 0"
-              animation="property: light.intensity;
-                         dur: 15000; from: -1; to: 1;
-                         dir: alternate; loop: true">
 
-  </a-light>
+    <a-light type="point" color="darkgray" intensity="1" position="0 0 0"
+             animation="property: light.intensity;
+                        dur: 15000; from: -3; to: 1;
+                        dir: alternate; loop: false">
+
+    </a-light>
 
 
 
