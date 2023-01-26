@@ -32,17 +32,15 @@
 </script>
 
   <body>
- <a-scene background="color: black"
+ <a-scene background="color: darkgreen"
     cursor="rayOrigin: mouse"
-         fog="type: exponential; density: 0.1; color: darkgreen;"
-         animation="property: fog.color; dur: 7000;
-                   from: #657B403; to: #657B403;
-                   loop: indefinite; dir: alternate">
+         <a-scene fog="type: linear; color: darkgreen; far: 15; near:0">
 
-  <a-light type="point" color="green" intensity="1" position="0 0 0"
+
+  <a-light type="point" color="darkgray" intensity="1" position="0 0 0"
            animation="property: light.intensity;
-                      dur: 7000; from: 3; to: 3;
-                      dir: alternate; loop: true">
+                      dur: 20000; from: -3; to: 1;
+                      dir: alternate; loop: false">
 
   </a-light>
 
@@ -86,117 +84,148 @@
                 mylink="href: comment.html;"
       ></a-entity>
 
+
+      <a-entity
+      position="0 -2 -50"
+      rotation="0 0 0"
+      text="width: 6; value: Would you like to
+      enter the Mudifyer?; align: center; color: white"
+        geometry="primitive: plane; width: 4; height: 3"
+        material="color: #3E3E3E"
+        animation="property: position; delay: 8000; easing: easeInElastic; from: 0 -2 -50; to: 0 0 -7; dur: 7000"
+         ></a-entity>
+
+         <a-entity
+         position="0 -2 -50"
+         rotation="0 0 0"
+         text="width: 6; value: No; align: center; color: white"
+           geometry="primitive: plane; width: 1; height: 1"
+           material="color: #3E3E3E"
+           mylink="href:index.html;"
+           animation="property: position; delay: 8000; easing: easeInElastic; from: 0 -2 -50; to: -2 0 -6; dur: 7000"
+            ></a-entity>
+
+            <a-entity
+            position="0 -2 -50"
+            rotation="0 0 0"
+            text="width: 6; value: Yes; align: center; color: white"
+              geometry="primitive: plane; width: 1; height: 1"
+              material="color: #3E3E3E"
+              mylink="href:comment.html;"
+              animation="property: position; delay: 8000; easing: easeInElastic; from: 2 -2 -50; to: 2 0 -6; dur: 7000"
+               ></a-entity>
+
       <!--pictures-->
 
 
       <a-entity
-      position="0 0 -7"
+      position="0 0 -15"
         geometry="primitive: plane"
-        animation="property: position; to: 0 10 -6; dur: 15000; easing: easeInOutElastic; dir: alternate; loop: true"
-        material="src: https://cdn.glitch.global/f6e7f4e5-537a-4709-bddf-0cbd0142e229/IMG_4455.PNG?v=1674660330543"
+        animation="property: position; to: 0 1 -5; dur: 20000; easing: easeInOutElastic; dir: alternate; loop: true"
+        material="src: https://cdn.glitch.global/f6e7f4e5-537a-4709-bddf-0cbd0142e229/PHOTO-2023-01-25-21-17-49.jpg?v=1674743335788"
         scale="5 10 5"
         ></a-entity>
 
         <a-entity
-        position="-5 2 -5"
+        position="-5 5 -10"
         rotation="0 30 0"
           geometry="primitive: plane"
-          animation="property: position; to: -5 20 -6; dur: 12000; easing: easeInOutElastic; dir: alternate; loop: true"
+          animation="property: position; to: -5 1 -6; dur: 18000; easing: easeInOutElastic; dir: alternate; loop: true"
           material="src: https://cdn.glitch.global/f6e7f4e5-537a-4709-bddf-0cbd0142e229/IMG_4457.PNG?v=1674660332574"
           scale="5 10 5"
           ></a-entity>
 
           <a-entity
-          position="-8 2 -3"
-          rotation="0 50 0"
+          position="-20 3 -3"
+          rotation="0 80 0"
             geometry="primitive: plane"
-            animation="property: position; to: -20 15 -6; dur: 15000; easing: easeInOutElastic; dir: alternate; loop: true"
+            animation="property: position; to: -7 1 -1; dur: 15000; easing: easeInOutElastic; dir: alternate; loop: true"
             material="src: https://cdn.glitch.global/f6e7f4e5-537a-4709-bddf-0cbd0142e229/IMG_4458.PNG?v=1674660333234"
             scale="5 10 5"
             ></a-entity>
 
             <a-entity
-            position="-4 0 3"
+            position="-15 5 3"
             rotation="0 100 0"
               geometry="primitive: plane"
-              animation="property: position; to: -5 -10 3; dur: 10000; easing: easeInOutElastic; dir: alternate; loop: true"
+              animation="property: position; to: -8 1 4; dur: 19000; easing: easeInOutElastic; dir: alternate; loop: true"
               material="src: https://cdn.glitch.global/f6e7f4e5-537a-4709-bddf-0cbd0142e229/IMG_4460.PNG?v=1674660335421"
               scale="5 10 5"
               ></a-entity>
 
               <a-entity
-              position="-3 2 6"
+              position="-10 8 6"
               rotation="0 130 0"
                 geometry="primitive: plane"
-                animation="property: position; to: -3 10 6; dur: 14000; easing: easeInOutElastic; dir: alternate; loop: true"
+                animation="property: position; to: -4 1 6; dur: 17000; easing: easeInOutElastic; dir: alternate; loop: true"
                 material="src: https://cdn.glitch.global/f6e7f4e5-537a-4709-bddf-0cbd0142e229/IMG_4461.PNG?v=1674660336869"
                 scale="5 10 5"
                 ></a-entity>
 
                 <a-entity
-                position="0 -1 8"
+                position="0 -10 8"
                 rotation="0 150 0"
                   geometry="primitive: plane"
-                  animation="property: position; to: 0 5 86; dur: 9000; easing: easeInOutElastic; dir: alternate; loop: true"
+                  animation="property: position; to: 0 1 8; dur: 20000; easing: easeInOutElastic; dir: alternate; loop: true"
                   material="src: https://cdn.glitch.global/f6e7f4e5-537a-4709-bddf-0cbd0142e229/IMG_4462.PNG?v=1674660337963"
                   scale="5 10 5"
                   ></a-entity>
 
                   <a-entity
-                  position="4 3 9"
+                  position="10 3 9"
                   rotation="0 190 0"
                     geometry="primitive: plane"
-                    animation="property: position; to: 4 -1 9; dur: 15000; easing: easeInOutElastic; dir: alternate; loop: true"
+                    animation="property: position; to: 4 1 9; dur: 21000; easing: easeInOutElastic; dir: alternate; loop: true"
                     material="src: https://cdn.glitch.global/f6e7f4e5-537a-4709-bddf-0cbd0142e229/IMG_4463.PNG?v=1674660338819"
                     scale="5 10 5"
                     ></a-entity>
 
                     <a-entity
-                    position="8 4 8"
+                    position="15 4 8"
                     rotation="0 230 0"
                       geometry="primitive: plane"
-                      animation="property: position; to: 8 15 8; dur: 16000; easing: easeInOutElastic; dir: alternate; loop: true"
+                      animation="property: position; to: 8 1 8; dur: 22000; easing: easeInOutElastic; dir: alternate; loop: true"
                       material="src: https://cdn.glitch.global/f6e7f4e5-537a-4709-bddf-0cbd0142e229/IMG_4466.PNG?v=1674660341547"
                       scale="5 10 5"
                       ></a-entity>
 
                       <a-entity
-                      position="10 -2 6"
+                      position="20 -2 6"
                       rotation="0 230 0"
                         geometry="primitive: plane"
-                        animation="property: position; to: 20 -2 6; dur: 10000; easing: easeInOutElastic; dir: alternate; loop: true"
+                        animation="property: position; to: 20 1 6; dur: 10000; easing: easeInOutElastic; dir: alternate; loop: true"
                         material="src: https://cdn.glitch.global/f6e7f4e5-537a-4709-bddf-0cbd0142e229/IMG_4467.PNG?v=1674660342949"
                         scale="5 10 5"
                         ></a-entity>
                         <a-entity
-                        position="7 0 3"
+                        position="14 0 3"
                         rotation="0 230 0"
                           geometry="primitive: plane"
-                          animation="property: position; to: 7 -2 3; dur: 15000; easing: easeInOutElastic; dir: alternate; loop: true"
+                          animation="property: position; to: 7 1 3; dur: 19000; easing: easeInOutElastic; dir: alternate; loop: true"
                           material="src: https://cdn.glitch.global/f6e7f4e5-537a-4709-bddf-0cbd0142e229/IMG_4469.PNG?v=1674660344574"
                           scale="5 10 5"
                           ></a-entity>
 
                           <a-entity
-                          position="10 -2 6"
+                          position="16 -2 6"
                           rotation="0 230 0"
                             geometry="primitive: plane"
-                            animation="property: position; to: 10 5 6; dur: 11000; easing: easeInOutElastic; dir: alternate; loop: true"
+                            animation="property: position; to: 10 1 6; dur: 20000; easing: easeInOutElastic; dir: alternate; loop: true"
                             material="src: https://cdn.glitch.global/f6e7f4e5-537a-4709-bddf-0cbd0142e229/IMG_4467.PNG?v=1674660342949"
                             scale="5 10 5"
                             ></a-entity>
                             <a-entity
-                            position="8 0 0"
+                            position="18 0 0"
                             rotation="0 280 0"
                               geometry="primitive: plane"
-                              animation="property: position; to: 8 2 0; dur: 18000; easing: easeInOutElastic; dir: alternate; loop: true"
+                              animation="property: position; to: 8 1 0; dur: 18000; easing: easeInOutElastic; dir: alternate; loop: true"
                               material="src: https://cdn.glitch.global/f6e7f4e5-537a-4709-bddf-0cbd0142e229/IMG_4469.PNG?v=1674660344574"
                               scale="5 10 5"
                               ></a-entity>
                               <a-entity
-                              position="5 0 -4"
+                              position="15 0 -4"
                               rotation="0 290 0"
-                              animation="property: position; to: 5 6 -4; dur: 13000; easing: easeInOutElastic; dir: alternate; loop: true"
+                              animation="property: position; to: 5 1 -4; dur: 20000; easing: easeInOutElastic; dir: alternate; loop: true"
                                 geometry="primitive: plane"
                                 material="src: https://cdn.glitch.global/f6e7f4e5-537a-4709-bddf-0cbd0142e229/IMG_4476.PNG?v=1674660350550"
                                 scale="5 10 5"
