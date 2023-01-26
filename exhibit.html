@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Welcome to Mudify</title>
+    <meta name="description" content="sketch">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="viewport" content="width=device-width,initial-scale=1.5,user-scalable=no">
+	<script src="compressed.js" type="text/javascript" charset="utf-8"></script>
+
+    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-physics-system@1.4.0/dist/aframe-physics-system.min.js"></script>
+    <script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
+    </head>
+
+<!--This script is new-->
+<script>
+  // component declaration
+  AFRAME.registerComponent("mylink", {
+    // define a url in the schema
+    schema: {
+      href: {}
+    },
+    init: function() {
+      // when clicked - change the location:
+      this.el.addEventListener("click", (e) => {
+        window.location = this.data.href;
+      })
+    }
+  })
+</script>
+
+  <body>
+ <a-scene background="color: black"
+    cursor="rayOrigin: mouse"
+         fog="type: exponential; density: 0.1; color: darkgreen;"
+         animation="property: fog.color; dur: 7000;
+                   from: #657B403; to: #657B403;
+                   loop: indefinite; dir: alternate">
+
+  <a-light type="point" color="#3E3E3E" intensity="1" position="0 0 0"
+           animation="property: light.intensity;
+                      dur: 7000; from: -1; to: 1;
+                      dir: alternate; loop: true">
+
+  </a-light>
+
+
+<!--bodies-->
+<a-scene physics>
+  <a-plane src="https://thumbs.dreamstime.com/b/hipster-green-chess-board-vector-pattern-plastic-143090549.jpg" position="0 -1 0" rotation="-90 0 0"
+          scale="5 5 5"></a-plane>
+
+
+          <a-text
+              text="width: 6; value: This space is constructed
+              in order to exhibit all the thougts,
+              links, texts and pictures that you shared
+              in the chat.
+
+              This exhibit space in under cunstruction.
+
+
+              Please travel back to the start page
+              by clicking on the @ with the arrow; align: center; color: #69CF0D"
+
+              position="0 1 -20"
+
+              animation="property: position; to: 0 1 -3; dur: 15000; dir: easeInOutCirc; dir: alternate; loop: false;"
+            ></a-text>
+
+<!--video-->
+<a-assets>
+  <a-asset-item id="arrow" src="https://cdn.glitch.global/f6e7f4e5-537a-4709-bddf-0cbd0142e229/arrow_3d.glb?v=1674575091633"></a-asset-item>
+</a-assets>
+
+<a-assets>
+  <a-asset-item id="treasure" src="https://cdn.glitch.global/f6e7f4e5-537a-4709-bddf-0cbd0142e229/at.glb?v=1674489574588"></a-asset-item>
+</a-assets>
+
+
+
+
+      <a-entity position="-4 1 -5" gltf-model="#treasure"
+                scale="3 3 3"
+                rotation="90 20 -100"
+                mylink="href: index.html;"
+
+      ></a-entity>
+      <a-entity position="-4 3 -5" gltf-model="#arrow"
+                scale="0.1 0.1 0.1"
+                rotation="0 0 0"
+                mylink="href: index.html;"
+      ></a-entity>
