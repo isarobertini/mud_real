@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Welcome to Mudify</title>
+    <meta name="description" content="underneath the structure">
+    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-physics-system@1.4.0/dist/aframe-physics-system.min.js"></script>
+    <script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
+<!--This script is new-->
+<script>
+  // component declaration
+  AFRAME.registerComponent("mylink", {
+    // define a url in the schema
+    schema: {
+      href: {}
+    },
+    init: function() {
+      // when clicked - change the location:
+      this.el.addEventListener("click", (e) => {
+        window.location = this.data.href;
+      })
+    }
+  })
+</script>
+  </head>
+  <body>
+    <a-entity id="mouseCursor" cursor="rayOrigin: mouse" raycaster="objects: #at"></a-entity>
+
+    <body>
+   <a-scene background="color: darkgreen"
+      cursor="rayOrigin: mouse"
+           <a-scene fog="type: linear; color: darkgreen; far: 15; near:0">
+
+
+    <a-light type="point" color="darkgray" intensity="1" position="0 0 0"
+             animation="property: light.intensity;
+                        dur: 2000; from: -2; to: 1;
+                        dir: alternate; loop: false">
+
+    </a-light>
+
+
+  <!--chess-->
+    <a-plane src="https://thumbs.dreamstime.com/b/hipster-green-chess-board-vector-pattern-plastic-143090549.jpg" position="0 0 -15" rotation="40 0 0"
+            scale="30 70 50"></a-plane>
+<!--text-->
+<a-text text=" value: Would you like to open the treasure?" color="black" position="-3 3 -20" scale="1.3 1.3 1" align: "center"
+  animation="property:position; to: -2 3 -5; dur: 20000; delay: 40"
+  ></a-text>
+<!--text animated-->
+
+
+  <a-entity
+    geometry="primitive: plane; width: 1; height: 1"
+    material="color: #544A2C"
+    text="width: 7; value: No; align: center; color: #69CF0D"
+    mylink="href:index.html;"
+    position="-5 1 -20"
+    animation="property:position; to: -4 1 -6; dur: 20000; delay: 40"
+        ></a-entity>
+    <a-entity
+      geometry="primitive: plane; width: 1; height: 1"
+      material="color: #544A2C"
+      text="width: 7; value: Yes; align: center; color: #69CF0D"
+      mylink="href:exhibit.html;"
+      position="5 1 -20"
+      animation="property:position; to: 4 1 -6; dur: 20000; delay: 40"
+
+      ></a-entity>
+
+
+<!--bodies-->
+
+      <a-assets>
+        <a-asset-item id="at" src="https://cdn.glitch.global/f6e7f4e5-537a-4709-bddf-0cbd0142e229/at.glb?v=1674489574588"></a-asset-item>
+      </a-assets>
+
+      <a-assets>
+        <a-asset-item id="treasure" src="https://cdn.glitch.global/67458bd5-8077-4e26-932a-26ac083eec53/treasure.gltf?v=1673779437333"></a-asset-item>
+      </a-assets>
+      <a-assets>
+        <a-asset-item id="note" src="https://cdn.glitch.global/f6e7f4e5-537a-4709-bddf-0cbd0142e229/musical_notes.glb?v=1674736150029"></a-asset-item>
+      </a-assets>
+
+
+ <a-entity position="0 2 -5" gltf-model="#at"
+                scale="20 20 20"
+                rotation="80 20 -100"
+                animation="property: rotation; dur: 40000;
+                             to: 50 360 110; dir: alternate; loop: false;
+                             property: position; to: 0 -4 -20;"
+sound="src:https://cdn.glitch.global/f6e7f4e5-537a-4709-bddf-0cbd0142e229/unterirdischvielleicht%40.mp3?v=1674492363186; autoplay:false; on: click; volume: 200"
+      ></a-entity>
+      <a-entity position="0 2 -0" gltf-model="#note"
+                     scale="1 1 1"
+                     rotation="0 -1 0"
+                     animation="property: rotation; dur: 40000;
+                                  to: 50 360 110; dir: alternate; loop: false;
+                                  property: position; to: 0 2 -6;"
+     sound="src:https://cdn.glitch.global/f6e7f4e5-537a-4709-bddf-0cbd0142e229/unterirdischvielleicht%40.mp3?v=1674492363186; autoplay:false; on: click; volume: 200"
+           ></a-entity>
+
+
+
+      <a-entity position="0 0 -6" gltf-model="#treasure"
+                scale="0.1 0.1 0.1"
+                rotation="0 0 0"
+                animation="property: rotation; dur: 10000;
+                           to: 0 360 0; loop: true"
+                sound="src:https://cdn.glitch.global/f6e7f4e5-537a-4709-bddf-0cbd0142e229/Magic%20Chime.mp3?v=1673800347254; autoplay:false; on: click; volume: 100;"
+      ></a-entity>
+
+      <!--  animation="property: rotation; dur: 10000;
+                   to: 0 360 0; loop: true" -->
+<!--cylinders-->
+<a-cylinder color="#544A2C" position="-12 0 -15" rotation="-10 0 0" height="30" radius="1"></a-cylinder>
+<a-cylinder color="#544A2C" position="12 0 -15" rotation="-10 0 0" height="30" radius="1"></a-cylinder>
+<a-cylinder color="#544A2C" position="-12 0 -6" rotation="-10 0 0" height="30" radius="1"></a-cylinder>
+<a-cylinder color="#544A2C" position="12 0 -6" rotation="-10 0 0" height="30" radius="1"></a-cylinder>
+         <a-assets>
+<!--bodies ends-->
+<a-text value="hej" font="custom-msdf.json" font-image="custom-msdf.png" negate="false" scale="2 2 1" position="-2 2 -4"></a-text>
+    </a-scene>
+  </body>
+</html>
+
+<!--aplanes-->
+<a-box color="tomato" depth="2" height="4" width="4"></a-box>
+
+
+
+  </a-scene>
+  </body>
